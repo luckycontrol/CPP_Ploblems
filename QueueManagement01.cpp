@@ -71,7 +71,7 @@ class Queue {
         }
         newQ.size = newQ.size + q.size;
 
-        return newQ;
+        return newQ; 
     }
 };
 
