@@ -71,8 +71,23 @@ class Queue {
         }
         newQ.size = newQ.size + q.size;
 
-        return newQ; 
+        return newQ;
     }
+};
+
+class Queue2: public Queue {
+
+    public:
+        void print() {
+            if (size <= 0) {
+                cout << "Queue is empty" << endl;
+                return;
+            }
+
+            for (int i=0; i<size; i++) {
+                cout << queue[i] << endl;
+            }
+        }
 };
 
 int main() {
@@ -87,6 +102,10 @@ int main() {
 
     Queue q3 = q1+q2;
     q3.print();
+
+    Queue2 q4;
+    q4.add(3); q4.add(66); q4.add(12);
+    q4.print();
 
     return 0;
 }
