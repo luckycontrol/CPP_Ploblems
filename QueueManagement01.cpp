@@ -1,19 +1,22 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
+template <class T>
 class Queue {
 
-    public:
-    int size;
-    int* queue;
+    private:
+        int size;
+        T* queue;
 
+    public:
     Queue() {
         size = 0;
-        queue = new int[100];
+        queue = new T[100];
     }
 
-    void add(int num) {
+    void add(T num) {
         queue[size] = num;
         size += 1;
     }
@@ -75,7 +78,12 @@ class Queue {
     }
 };
 
-class Queue2: public Queue {
+template <class T>
+class Queue2: public Queue<T> {
+
+    private:
+        int size;
+        T* queue;
 
     public:
         void print() {
@@ -92,20 +100,13 @@ class Queue2: public Queue {
 
 int main() {
 
-    Queue q1;
+    Queue<int> q1;
     q1.add(42); q1.add(16); q1.add(8);
     q1.print();
 
-    Queue q2;
-    q2.add(1); q2.add(2); q2.add(3);
+    Queue<string> q2;
+    q2.add("Dave"); q2.add("John"); q2.add("Any");
     q2.print();
-
-    Queue q3 = q1+q2;
-    q3.print();
-
-    Queue2 q4;
-    q4.add(3); q4.add(66); q4.add(12);
-    q4.print();
 
     return 0;
 }
