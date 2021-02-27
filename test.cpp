@@ -5,17 +5,12 @@
 vector<int> test();
 
 int main() {
-    vector<int> vect;
+    vector< vector<int> > vect;
 
-    vect.push_back(10);
-    vect.push_back(20);
-    vect.push_back(30);
+    vect[0][0] = 10;
+    vect[0][1] = 20;
 
-    vector<int> result = test();
-
-    for (int i=0; i<result.size(); i++) {
-        cout << result[i] << endl;
-    }
+    cout << vect.size() << endl;
 
     return 0;
 }
