@@ -2,11 +2,13 @@
 #include "date.h"
 
 int main() {
-    Date d;
+    Date date;
 
-    d.setDate(2021, 12, 30);
+    date.setDate(2021, 2, 27);
 
-    d.addMonth(30);
+    date.addMonth(32);
+
+    date.addMonth(-32);
 
     return 0;
 }
