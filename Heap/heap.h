@@ -65,6 +65,21 @@ class Heap {
             heap[parent] = temp;
             return item;
         }
+
+        element* heap_sort(element a[], int n) {
+            int i;
+            Heap heap;
+
+            for (i=0; i<n; i++) {
+                heap.insert_heap(a[i]);
+            }
+
+            for (i=(n-1); i>=0; i--) {
+                a[i] = heap.delete_heap();
+            }
+
+            return a;
+        }
 };
 
 #endif

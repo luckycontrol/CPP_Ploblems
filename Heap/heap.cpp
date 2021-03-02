@@ -1,22 +1,17 @@
 #include "heap.h"
+#include <vector>
 
 int main() {
     // 힙은 배열로 구현하는게 일반적이다.
+    element arr[10] = {1, 5, 2, 8, 9, 15, 11, 13, 16, 19};
 
-    Heap heap;
+    element *newArr;
+    newArr = Heap().heap_sort(arr, 10);
 
-    heap.print_heap();
-
-    heap.insert_heap(10);
-    heap.print_heap();
-
-    heap.insert_heap(100);
-    heap.insert_heap(50);
-    heap.insert_heap(70);
-    heap.print_heap();
-
-    heap.delete_heap();
-    heap.print_heap();
+    for(int i=0; i<10; i++) {
+        std::cout << newArr[i] << " <- ";
+    }
+    std::cout << std::endl;
 
     return 0;
 }
