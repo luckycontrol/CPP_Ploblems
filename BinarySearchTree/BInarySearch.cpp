@@ -8,6 +8,16 @@ int main() {
     b.insert(9);
     b.insert(7);
 
-    b.search(7);
+    b.search(9);
+
+    b.insert(15);
+    b.search(15);
+
+    b.remove(10);
+    std::cout << b.search(7) << std::endl;
+
+
+    
+
     return 0;
 }
